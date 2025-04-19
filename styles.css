@@ -1,0 +1,278 @@
+/* General Styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #f0f0f0;
+    padding: 1rem 0;
+    position: relative; /* Required for positioning the mobile menu */
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Vertically center items */
+}
+
+nav li {
+    margin-left: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav section {
+    padding: 1rem;
+}
+
+/* Projects Section */
+#projects {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project figure {
+    margin: 0;
+}
+
+.project img {
+    width: 100%;
+    height: 250px; /* Increased height */
+    object-fit: contain; /* Use 'contain' instead of 'cover' */
+    display: block;
+    border-radius: 4px;
+}
+
+.project h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Skills Section */
+#skills {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#skills li {
+    background-color: #e0e0e0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 2rem;
+    max-width: 50%; /* 50% width on desktop */
+    margin-left: 0; /* Align to the left */
+}
+
+#contact form {
+    display: grid;
+    gap: 1rem;
+}
+
+#contact label {
+    font-weight: bold;
+}
+
+#contact input,
+#contact textarea {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#contact textarea {
+    width: 600px; /* Set initial width */
+    min-height: 360px; /* Set initial height */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+#contact button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 40%; /* Reduce button size to 40% */
+}
+
+#contact button:hover {
+    background-color: #0056b3;
+}
+
+/* Accessibility */
+button:focus,
+a:focus {
+    outline: 2px solid dodgerblue;
+    outline-offset: 2px;
+}
+
+/* Mobile Navigation */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem; /* Increased size for better visibility */
+    padding: 0.5rem; /* Added padding for a larger touch target */
+    margin-left: auto; /* Push to the right */
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.95); /* Added transparency */
+    color: white;
+    padding: 1rem;
+    box-sizing: border-box;
+    z-index: 100; /* Ensure it's on top of other content */
+    text-align: center; /* Center the menu items */
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.75rem; /* Increased padding for better touch target */
+    font-size: 1.2rem; /* Increased font size for readability */
+}
+
+.mobile-menu.open {
+    display: block; /* Show the menu when the "open" class is added */
+}
+
+/* About Me Section */
+#about {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the section */
+    text-align: left; /* Consistent text alignment */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) { /* Tablet and Mobile */
+    #contact {
+        max-width: 80%; /* Wider on tablet */
+        text-align: center; /* Center content */
+    }
+
+    #contact textarea {
+        width: 100%; /* Make textarea full width on tablet */
+    }
+
+    nav section {
+        display: none; /* Hide the section with "About Me" */
+    }
+
+    .menu-icon {
+        display: block; /* Show the hamburger menu */
+    }
+}
+
+@media (max-width: 995px) {
+    nav ul {
+        display: none; /* Hide the main menu */
+    }
+
+    .menu-icon {
+        display: block; /* Show the hamburger menu */
+        margin-left: auto; /* Push to the right */
+    }
+
+    nav section {
+        display: none; /* Hide the section with "About Me" */
+    }
+}
+
+@media (max-width: 768px) { /* Adjusted breakpoint */
+    #contact {
+        max-width: 90%; /* Even wider on mobile */
+    }
+
+    #contact textarea {
+        width: 100%; /* Make textarea full width on mobile */
+    }
+
+    nav ul {
+        display: none; /* Hide the main menu on smaller screens */
+    }
+
+    nav section {
+        display: none; /* Hide the section with "About Me" */
+    }
+
+    .menu-icon {
+        display: block; /* Show the hamburger menu */
+    }
+
+    nav {
+        padding: 0 1rem; /*Keep nav from taking up too much space*/
+    }
+
+}
