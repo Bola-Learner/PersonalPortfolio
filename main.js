@@ -2,9 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuIcon = document.querySelector('.menu-icon');
     const mobileMenu = document.querySelector('.mobile-menu');
 
+    // Set initial aria-expanded state
+    menuIcon.setAttribute('aria-expanded', 'false');
+
     // Function to toggle the navigation menu's visibility
     function toggleMenu() {
+        const expanded = mobileMenu.classList.contains('open');
         mobileMenu.classList.toggle('open');
+        menuIcon.setAttribute('aria-expanded', String(!expanded));
     }
 
     menuIcon.addEventListener('click', toggleMenu);
