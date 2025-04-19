@@ -220,6 +220,25 @@ a:focus {
     #contact {
         max-width: 80%; /* Wider on tablet */
         text-align: center; /* Center content */
+        margin: 0 auto; /* Add this line to center the contact section */
+    }
+
+    #contact form {
+        display: flex; /* Use flexbox to center items */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    #contact label {
+        text-align: center; /* Center labels */
+    }
+
+    #contact input,
+    #contact textarea {
+        width: 100%; /* Make form elements full width */
+        max-width: 300px; /* Limit the maximum width of form elements */
+        margin: 0 auto; /* Center form elements */
+        display: block; /* Ensure margin auto works correctly */
     }
 
     #contact textarea {
@@ -252,7 +271,7 @@ a:focus {
 
 @media (max-width: 768px) { /* Adjusted breakpoint */
     #contact {
-        max-width: 90%; /* Even wider on mobile */
+        max-width: 60%; /* Even wider on mobile */
     }
 
     #contact textarea {
